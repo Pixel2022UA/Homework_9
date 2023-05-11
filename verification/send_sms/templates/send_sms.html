@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Send SMS</button>
+</form>
+{% if success %}
+    <p>SMS was sent successfully! <a href="{% url 'success-page' phone_number=number %}">Click here</a> to go to success page.</p>
+{% endif %}
